@@ -1,0 +1,140 @@
+.form-container
+{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-family:Arial;
+  margin:20px;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px 0px rgba(0,0,0,.3);
+}
+.form-container div
+{
+  margin-bottom:10px;
+}
+.form-container input
+{
+  border:none;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  padding:10px;
+  border-radius:4px;
+}
+button
+{
+  background:none;
+  border: 1px solid rgba(0,0,0.5);
+  border-radius:10px;
+  padding:10px;
+  cursor:pointer;
+}
+button:hover
+{
+  background:rgba(0,0,0,.2)
+}
+
+.card-container
+{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  /* height:100vh; */
+  background-color: #f0f0f0;
+}
+
+.card
+{
+  width:20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  border-radius:15px;
+  padding:100px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align:center;
+  font-family:Arial, sans-serif;
+  color: #333;
+  display:none;
+}
+
+.header
+{
+  display:flex;
+  justify-content:center;
+}
+.first-col
+{
+  display:flex;
+  flex-direction:column;
+  /* width:50px; */
+  height:140px;
+  /* background:rgba(0,0,0,.1); */
+}
+
+#post
+{
+    font-size: 1.2em;
+}
+
+.first-col span
+{
+  font-weight:bold;  
+  padding:3px 0;
+}
+.general
+{
+  font-size:2.5em;
+}
+#portrait 
+{
+  width: 150px;
+  margin-left: -25px;
+}
+
+.card .details
+{
+  margin: 0px 0;
+  font-size:1em;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  text-align:left;
+  width:100%;
+  font-weight:600;
+}
+
+.d-col
+{
+  margin-right:10px;
+}
+.name span
+{
+  font-weight : bold;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+.name
+{
+  padding-top:5px;
+  font-size: 1.5em;
+}
+
+.blue
+{
+    color: white;
+}
+
+.download-button
+{
+    display: none;
+}
+
+.wrapper
+{
+    display: flex;
+    justify-content: center;
+}
+
+.display
+{
+    display: flex;
+}

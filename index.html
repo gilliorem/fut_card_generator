@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Générateur de carte Fut Lumélio</title>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Génrateur de carte FUT - Équipe Lumélio</h2>
+    <select name="vendeur" id="vendeur-select-list">
+      <option value="" disabled selected>-- Sélectionner un vendeur --</option>
+      <option value="Angelo" id="angelo-option">Angelo</option>
+      <option value="Arthur" id="arthur-option">Arthur</option>
+      <option value="Emmanuel" id="emmanuel-option">Emmanuel</option>
+      <option value="Frédéric" id="frederic-option">Frédéric</option>
+      <option value="Maxime" id="maxime-option">Maxime</option>
+      <option value="Ruddy" id="ruddy-option">Ruddy</option>
+    </select>
+    <div class="resultats">
+      <h3>Résultats</h3>
+      <div>
+      <input type="number" id="ventes" min="0" max="30" placeholder="Ventes">
+      </div>
+      <div>
+        <input type="number" id="ca" min ="0" max="500000" placeholder="CA">
+      </div>
+    </div>
+    <div class="objectif">
+    <h3>Objectifs</h3>
+      <div>
+        <input type="number" id="objectif-ventes"min="2" max="25" placeholder="Ventes">
+      </div>
+      <div>
+        <input type="number" id="objectif-ca" min="20000" max="800000" placeholder="CA">
+      </div>
+    </div>
+    <button id="generate-card-button">Générer ma carte</button>
+  </div>
+  <div class="card-container">
+  <div class="card">
+    <div class="header">
+      <div class="first-col">  
+        <span class="general"></span>
+        <span id="post"></span>
+        <span id="flag-span">
+            <img id="flag-image" src="" alt="" width="30">
+        </span>
+        <div class="logo"><img width =20 src="logos_images/lumelio-logo.png"alt="logo lumelio"> </div>
+      </div>
+    <div class="portrait">
+      <img id="portrait"src="" alt="">
+    </div>
+    </div>
+    <div class="name"><span id="name-span"></s></div>
+    <div class="details">
+      <div class="d-col">
+        <div id ="ventes-span"></div>
+        <div id = "ca-span"></div>
+      </div>
+      <div class="d-two">
+        <div id = "stat-three"><span id ="span-number"></span><span id = "span-name"></span></div>
+        <div id="stat-four"><span id ="span-number-two"></span><span id = "span-name-two"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+    <button class="download-button">Télécharger ma carte</button>  
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</script>
+
+    <script src="app.js"></script>
+</body>
+</html>
