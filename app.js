@@ -46,12 +46,18 @@ const portugalFlagImage = "/flags_images/portugal-flag.png";
 
 const sellers = ["Angelo", "Arthur", "Emmanuel", "Frédéric", "Maxime", "Ruddy"];
 
-const angeloWords = [" PISCINE", " KARTING ", " BOXE", " DON PAPA"];
-let arthurWords = [" BBQ", " IMC", " VT", " DEVIS"];
-const emmanuelWords = [" SQUEEZ", " PAR CONTRE", " VIVEL DOP"];
-const fredericWords = [" PADL", " VT", " ONESHOOT", " YÉ LAIIID"];
-const maximeWords = [" BDC", " ABNÉGATION"];
-const ruddyWords = [" ISO", " ACDC"];
+const angeloWords = [" PISCINE", " KARTING "];
+const angeloWordsTwo = [" BOXE", " DON PAPA"];
+let arthurWords = [" BBQ", " IMC"];
+const arthurWordsTwo = [" VT", " DEVIS"];
+const emmanuelWords = [" SQUEEZ", " PAR CONTRE"];
+const emmanuelWordsTwo = ["VIVEL DOP"];
+const fredericWords = [" PADL", " VT"];
+const fredericWordsTwo = [" ONE SHOT", " YÉ LAIDD"]
+const maximeWords = [" BDC"];
+const maximeWordsTwo = [" ABNÉGATION"];
+const ruddyWords = [" ISO"];
+const ruddyWordsTwo = [" ACDC"];
 
 function generatePost()
 {
@@ -118,7 +124,7 @@ function displayProfile()
             nameSpan.innerText = sellers[0].toUpperCase();
             generateRandomWord(angeloWords, spanName);
             generateRandomNumber(spanNumber);
-            generateRandomWord(angeloWords, spanNameTwo);
+            generateRandomWord(angeloWordsTwo, spanNameTwo);
             generateRandomNumber(spanNumberTwo);
         }
     else if (selectList.value == "Arthur")
@@ -128,7 +134,7 @@ function displayProfile()
             nameSpan.innerText = sellers[1].toUpperCase();
             generateRandomWord(arthurWords, spanName);
             generateRandomNumber(spanNumber);
-            generateRandomWord(arthurWords, spanNameTwo);
+            generateRandomWord(arthurWordstwo, spanNameTwo);
             generateRandomNumber(spanNumberTwo);
         }
     else if (selectList.value == "Emmanuel")
@@ -138,7 +144,7 @@ function displayProfile()
             nameSpan.innerText = sellers[2].toUpperCase()
             generateRandomWord(emmanuelWords, spanName);
             generateRandomNumber(spanNumber);
-            generateRandomWord(emmanuelWords, spanNameTwo);
+            generateRandomWord(emmanuelWordsTwo, spanNameTwo);
             generateRandomNumber(spanNumberTwo);
         }
     else if (selectList.value == "Frédéric")
@@ -148,7 +154,7 @@ function displayProfile()
             nameSpan.innerText = sellers[3].toUpperCase()
             generateRandomWord(fredericWords, spanName);
             generateRandomNumber(spanNumber);
-            generateRandomWord(fredericWords, spanNameTwo);
+            generateRandomWord(fredericWordsTwo, spanNameTwo);
             generateRandomNumber(spanNumberTwo);
         }
     else if (selectList.value == "Maxime")
@@ -158,7 +164,7 @@ function displayProfile()
             nameSpan.innerText = sellers[4].toUpperCase()
             generateRandomWord(maximeWords, spanName);
             generateRandomNumber(spanNumber);
-            generateRandomWord(maximeWords, spanNameTwo);
+            generateRandomWord(maximeWordsTwo, spanNameTwo);
             generateRandomNumber(spanNumberTwo);
         }
     else if (selectList.value == "Ruddy")
@@ -168,7 +174,7 @@ function displayProfile()
             nameSpan.innerText = sellers[5].toUpperCase()
             generateRandomWord(ruddyWords, spanName);
             generateRandomNumber(spanNumber);
-            generateRandomWord(ruddyWords, spanNameTwo);
+            generateRandomWord(ruddyWordsTwo, spanNameTwo);
             generateRandomNumber(spanNumberTwo);
         }
         return selectList.value;
