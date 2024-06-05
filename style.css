@@ -93,6 +93,10 @@ button:hover
 
 .card .details
 {
+    @media (max-width:420px)
+    {
+        width: 200px;
+    }
   margin: 0px 0;
   font-size:1em;
   display:flex;
@@ -137,4 +141,12 @@ button:hover
 .display
 {
     display: flex;
+}
+
+@media (max-width: 420px) 
+{
+    .card
+    {
+        width: 200px;
+    } 
 }

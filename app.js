@@ -113,8 +113,6 @@ function generatePost()
     }
 }   
 
-
-
 function displayProfile()
 {
     if (selectList.value == "Angelo")
@@ -134,7 +132,7 @@ function displayProfile()
             nameSpan.innerText = sellers[1].toUpperCase();
             generateRandomWord(arthurWords, spanName);
             generateRandomNumber(spanNumber);
-            generateRandomWord(arthurWordstwo, spanNameTwo);
+            generateRandomWord(arthurWordsTwo, spanNameTwo);
             generateRandomNumber(spanNumberTwo);
         }
     else if (selectList.value == "Emmanuel")
