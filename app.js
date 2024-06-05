@@ -1,6 +1,9 @@
+const resultMonthSpan = document.querySelector("#result-month-span");
 let generateCardButton = document.querySelector("#generate-card-button");
 let downloadButton = document.querySelector(".download-button");
+
 let objectifVentes = document.querySelector("#objectif-ventes");
+
 let objectifCa = document.querySelector("#objectif-ca");
 let ventes = document.querySelector("#ventes");
 let ca = document.querySelector("#ca");
@@ -21,28 +24,28 @@ const postSpan = document.querySelector("#post");
 const flagImage = document.querySelector("#flag-image");
 const nameSpan = document.querySelector("#name-span");
 
-let angeloProfileImage = "/profile_images/Angelo.png";
-let arthurProfileImage = "/profile_images/Arthur.png";
-let emmanuelProfileImage = "/profile_images/Manu.png";
-let fredericProfileImage = "/profile_images/Frederic.png";
-let maximeProfileImage = "/profile_images/Maxime.png";
-let ruddyProfileImage = "/profile_images/Ruddy.png";
+let angeloProfileImage = "profile_images/Angelo.png";
+let arthurProfileImage = "profile_images/Arthur.png";
+let emmanuelProfileImage = "profile_images/Manu.png";
+let fredericProfileImage = "profile_images/Frederic.png";
+let maximeProfileImage = "profile_images/Maxime.png";
+let ruddyProfileImage = "profile_images/Ruddy.png";
 
-let arthurProfileImageInForm = "/profile_images/Arthur-en-forme.png";
-let emmanuelProfileImageInForm = "/profile_images/Manu-en-forme.png";
-let fredericProfileImageInForm = "/profile_images/Frederic-en-forme.png";
-let maximeProfileImageInForm = "/profile_images/Maxime-en-forme.png";
-let ruddyProfileImageInForm = "/profile_images/Ruddy-en-forme.png";
+let arthurProfileImageInForm = "profile_images/Arthur-en-forme.png";
+let emmanuelProfileImageInForm = "profile_images/Manu-en-forme.png";
+let fredericProfileImageInForm = "profile_images/Frederic-en-forme.png";
+let maximeProfileImageInForm = "profile_images/Maxime-en-forme.png";
+let ruddyProfileImageInForm = "profile_images/Ruddy-en-forme.png";
 
 const inFormSellers = [];
 inFormSellers.push(arthurProfileImageInForm, emmanuelProfileImageInForm, fredericProfileImageInForm, maximeProfileImageInForm, ruddyProfileImageInForm);
 
-const argentineFlagImage = "/flags_images/argentine-flag.png";
-const camerounFlagImage = "/flags_images/cameroun-flag.png";
-const frenchFlagImage = "/flags_images/french-flag.png";
-const germanFlagImage = "/flags_images/german-flag.png";
-const italianFlagImage = "/flags_images/italian-flag.png";
-const portugalFlagImage = "/flags_images/portugal-flag.png";
+const argentineFlagImage = "flags_images/argentine-flag.png";
+const camerounFlagImage = "flags_images/cameroun-flag.png";
+const frenchFlagImage = "flags_images/french-flag.png";
+const germanFlagImage = "flags_images/german-flag.png";
+const italianFlagImage = "flags_images/italian-flag.png";
+const portugalFlagImage = "flags_images/portugal-flag.png";
 
 const sellers = ["Angelo", "Arthur", "Emmanuel", "Frédéric", "Maxime", "Ruddy"];
 
@@ -51,7 +54,7 @@ const angeloWordsTwo = [" BOXE", " DON PAPA"];
 let arthurWords = [" BBQ", " IMC"];
 const arthurWordsTwo = [" VT", " DEVIS"];
 const emmanuelWords = [" SQUEEZ", " PAR CONTRE"];
-const emmanuelWordsTwo = ["VIVEL DOP"];
+const emmanuelWordsTwo = [" VIVEL DOP"];
 const fredericWords = [" PADL", " VT"];
 const fredericWordsTwo = [" ONE SHOT", " YÉ LAIDD"]
 const maximeWords = [" BDC"];
@@ -59,57 +62,57 @@ const maximeWordsTwo = [" ABNÉGATION"];
 const ruddyWords = [" ISO"];
 const ruddyWordsTwo = [" ACDC"];
 
-function generatePost()
+function generatePost(element)
 {
     const date = new Date();
     let month = date.getMonth();
     if (month == 1)
     {
-        postSpan.innerText = "JAN";
+        element.innerText = "JAN";
     }
     else if (month == 2)
     {
-        postSpan.innerText = "FEV";
+        element.innerText = "FEV";
     }
     else if (month == 3)
     {
-        postSpan.innerText = "MAR";
+        element.innerText = "MAR";
     }
     else if (month == 4)
     {
-        postSpan.innerText = "AVR";
+        element.innerText = "AVR";
     }
     else if (month == 5)
     {
-        postSpan.innerText = "MAI";
+        element.innerText = "MAI";
     }
     else if (month == 6)
     {
-        postSpan.innerText = "JUIN";
+        element.innerText="JUIN";
     }
     else if (month == 7)
     {
-        postSpan.innerText = "JUIL";
+        element.innerText = "JUIL";
     }
     else if (month == 8)
     {
-        postSpan.innerText = "AOU";
+        element.innerText = "AOU";
     }
     else if (month == 9)
     {
-        postSpan.innerText = "SEP";  
+        element.innerText = "SEP";  
     }
     else if (month == 10)
     {
-        postSpan.innerText = "OCT";
+        element.innerText = "OCT";
     }
     else if (month == 11)
     {
-        postSpan.innerText = "NOV";
+        element.innerText = "NOV";
     }
     else if (month == 12)
     {
-        postSpan.innerText = "DEC";
+        element.innerText = "DEC";
     }
 }   
 
@@ -232,11 +235,12 @@ function getIncomeRatio()
   return incomeRatio;
 }
 
+generatePost(resultMonthSpan);
 
 generateCardButton.addEventListener("click", () => {
   card.style.display="block";
   downloadButton.classList.add('display');
-  generatePost();
+  generatePost(postSpan);
   getIncomeAndSaleValues();
   let sellRatio =getSellRatio();
   let incomeRatio = getIncomeRatio();
