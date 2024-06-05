@@ -9,10 +9,43 @@
   border-radius:10px;
   box-shadow:0 0 10px 0px rgba(0,0,0,.3);
 }
+
 .form-container div
 {
   margin-bottom:10px;
 }
+h2
+{
+	display:inline-block;
+	text-decoration:none;
+}
+.sun
+{
+	border-radius: 50%;
+	aspect-ratio:1/1;
+	height:25px;
+	background: #FFED00;
+	animation: 15s linear 0s infinite alternate sun-slide;
+	position:relative;
+	z-index:-1;
+}
+
+@keyframes sun-slide
+{
+	from {
+		transform: translate(0,-30px);
+		animation-timing-function: ease-in-out;
+	}
+	50%{
+		transform: translate(10vw, -63px);
+		animation-timing-function : ease-in-out;	
+	}
+	100%{
+		transform: translate(20vw, -30px);
+		animation-timing-function: ease-in-out;
+	}
+}
+
 .form-container input
 {
   border:none;
@@ -44,7 +77,7 @@ button:hover
 
 .card
 {
-  width:36%;
+  width:17%;
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
@@ -55,6 +88,19 @@ button:hover
   font-family:Arial, sans-serif;
   color: #333;
   display:none;
+}
+
+.card-animation
+{
+	animation : 3s ease-in 1s both card-animation;
+	transform: skew(51deg, 61deg);
+}
+
+@keyframes card-animation
+{
+	100%{
+		transform: translateZ(0);
+	}
 }
 
 .header

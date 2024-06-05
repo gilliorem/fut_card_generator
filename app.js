@@ -49,15 +49,15 @@ const portugalFlagImage = "flags_images/portugal-flag.png";
 
 const sellers = ["Angelo", "Arthur", "Emmanuel", "Frédéric", "Maxime", "Ruddy"];
 
-const angeloWords = [" PISCINE", " KARTING "];
+const angeloWords = [" PISCINE", " KARTING"];
 const angeloWordsTwo = [" BOXE", " DON PAPA"];
-let arthurWords = [" BBQ", " IMC"];
+let arthurWords = [" BBQ", " IMC", "PDL"];
 const arthurWordsTwo = [" VT", " DEVIS"];
 const emmanuelWords = [" SQUEEZ", " PAR CONTRE"];
 const emmanuelWordsTwo = [" VIVEL DOP"];
 const fredericWords = [" PADL", " VT"];
 const fredericWordsTwo = [" ONE SHOT", " YÉ LAIDD"]
-const maximeWords = [" BDC"];
+const maximeWords = [" BDC", " EN CE SENS", "A CESUJET"];
 const maximeWordsTwo = [" ABNÉGATION"];
 const ruddyWords = [" ISO"];
 const ruddyWordsTwo = [" ACDC"];
@@ -70,6 +70,7 @@ function generatePost(element)
     {
         element.innerText = "JAN";
     }
+
     else if (month == 2)
     {
         element.innerText = "FEV";
@@ -207,19 +208,6 @@ function getIncomeAndSaleValues()
   ventesSpan.innerText = ventesValue + " VENTE" ;
   caSpan.innerText = caValue + " CA";
 }
-function getSellRatio()
-{
-  let sellValue = parseInt(ventes.value);
-  let objectifSellValue = parseInt(objectifVentes.value);
-  console.log(sellValue, objectifSellValue);
-  
-  let sellRatio = sellValue/objectifSellValue;
-  sellRatio *=100;
-  sellRatio = sellRatio.toFixed(2);
-  sellRatio = parseFloat(sellRatio);
-  console.log(sellRatio);
-  return sellRatio;
-}
 
 function getIncomeRatio()
 {
@@ -239,12 +227,12 @@ generatePost(resultMonthSpan);
 
 generateCardButton.addEventListener("click", () => {
   card.style.display="block";
+	card.classList.add("card-animation");
   downloadButton.classList.add('display');
   generatePost(postSpan);
   getIncomeAndSaleValues();
-  let sellRatio =getSellRatio();
   let incomeRatio = getIncomeRatio();
-  let general = (sellRatio + incomeRatio ) / 2;
+  let general =incomeRatio;
   general = incomeRatio.toFixed(0);
     if (general < 50)
     {
@@ -290,13 +278,24 @@ generateCardButton.addEventListener("click", () => {
     }
   generalN.innerText = general;
 });
+let months = ["JAN","FEV","MAR","AVR","MAI","JUIN","JUIL","AOU","SEP",
+"OCT","NOV","DEC"];
+function getMonthInLetters()
+{
+	const date = new Date();
+	let month = date.getMonth();
+	let monthInLetters = months[month];
+	monthInLetters = monthInLetters.toLowerCase();
+	return monthInLetters;
+}
+
 
 downloadButton.addEventListener('click', function() {
     html2canvas(cardContainer).then(canvas => {
         // Create a link element
         let link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
-        link.download = 'card.png';
+        link.download = selectList.value + "-"+getMonthInLetters() + '-fut-card.png';
         // Append the link to the body
         document.body.appendChild(link);
         // Programmatically click the link to trigger the download
